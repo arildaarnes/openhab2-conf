@@ -1,0 +1,15 @@
+
+rule "TerasseDoorSpisestue"
+when
+	Item TerasseDoorSpisestue changed
+then
+	if(Alarm_State.state==ON)
+	{
+		sendNotification("arild@aarnes.org", "Alarm! Terassedør spisesstue åpnet")
+		
+	}
+		
+	
+end
+
+

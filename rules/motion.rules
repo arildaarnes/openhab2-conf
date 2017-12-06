@@ -1,0 +1,20 @@
+
+
+rule "Motion Detectors"
+when
+	Item MotionTVStue_Motion changed from 0 to 1
+then
+
+
+
+if (Alarm_State.state==ON)
+{     
+	
+			//notify via Pushsafer
+		//pushsafer("pRnOj3rddehBzFtu3BvF", "Alarm Bevegelse detektert", "Alarm", "6764", "", "1", "")
+		sendNotification("arild@aarnes.org", "Bevegelse i TV-Stue")
+			
+		}
+
+
+end

@@ -1,0 +1,42 @@
+
+/*Catalina soverom */
+Number Window1etgRom1 "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node12:sensor_binary" }
+
+/*Mia soverom */
+Number Window1etgRom2 "Vindu [MAP(no.map):%s]" <window> { channel="wave:device:3fea5b3e:node13:sensor_binary" }
+
+/*Malene soverom */
+Number Window1etgRom3 "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node14:sensor_binary" }
+
+/*Bad 1 etg */
+Number Window1etgRom4 "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node15:sensor_binary" }
+
+/*Stue */
+Number Window2etgStue1 "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node16:sensor_binary" }
+
+Number Window2etStue2 "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node17:sensor_binary" }
+
+Number Window2etgStue3 "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node18:sensor_binary" }
+
+/*Gang hovedinngang */
+Number Window2etgGang "Vindu [MAP(no.map):%s]" <window> { channel="zwave:device:3fea5b3e:node19:sensor_binary" }
+
+/*Kjøkken */
+Number Window2etgKitchen "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node20:sensor_binary" }
+
+/*Kontor */
+Number Window3etgKontor1 "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node21:sensor_binary" }
+
+Number Window3etgKontor2 "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node22:sensor_binary" }
+
+/*TVStue */
+Number Window3etgTVStue1 "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node23:sensor_binary" }
+
+Number Window3etgTVStue2 "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node24:sensor_binary" }
+
+/*Garderobe plan 6 */
+Number Window3etgGarderobe "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node25:sensor_binary" }
+
+/*Soverom plan 6 */
+Number Window3etgSoverom "Vindu [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node26:sensor_binary" }
+

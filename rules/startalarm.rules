@@ -1,0 +1,7 @@
+rule "set password"
+when
+	System started
+then
+	Alarm_Code.postUpdate('432611')
+	//Alarm_State.postUpdate('ON')
+end

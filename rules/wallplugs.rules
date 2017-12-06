@@ -1,0 +1,18 @@
+import org.openhab.core.library.types.*
+import org.openhab.core.persistence.*
+import org.openhab.model.script.actions.*
+
+var Timer waitTimer = null
+
+
+rule "Shutdown coffeemaker"
+when
+	Item WallPlugKitchen changed from OFF to ON
+then
+	
+		waitTimer = createTimer(now.plusMinutes(15))[|
+			WallPlugKitchen.sendCommand(OFF)
+			
+		]
+	
+end

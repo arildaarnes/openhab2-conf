@@ -1,0 +1,22 @@
+
+
+rule "Format timetoWork"
+when
+    Item TimeToBouvet received update
+then
+    
+    
+    //val String TimeToJob = TimeToBouvet.state.toString().replace('["','')
+    //trasform returned Json becuse it contains ["13 mins"]
+    var String TimeToJob = transform("REGEX", ".*?([0-9]+).*", TimeToBouvet.state.toString())
+    //The 
+    TimeToBouvetint.postUpdate(TimeToJob)
+    
+    
+    var String TimeToHovestr = transform("REGEX", ".*?([0-9]+).*", TimeToHove.state.toString())
+    
+    TimeToHoveint.postUpdate(TimeToHovestr)
+    
+    //sendNotification("arild@aarnes.org", "Alarm is OFF" + TimeToJob)
+    
+end

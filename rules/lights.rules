@@ -1,0 +1,42 @@
+
+
+//On the top floor, When main hall light is switched on turn on LED strip as well
+rule "Connect Lights Toppen ON"
+when
+	Item LightsGangToppen received command ON
+then
+	
+		
+			WallPlugPlan6.sendCommand(ON)
+
+end
+
+//When main hall light is switched OFF turn OFF LED strip as well
+rule "Connect Lights Toppen OFF"
+when
+	Item LightsGangToppen received command OFF
+	
+then
+	
+		
+			WallPlugPlan6.sendCommand(OFF)
+			
+		
+	
+end
+
+//Kjører når bryter på veggen brukes
+rule "LightsToppen Switch is used"
+when
+	Item LightsGangToppen changed
+then
+	if (LightsGangToppen.state == 0) {
+       WallPlugPlan6.sendCommand(OFF)
+       }
+    else
+    {
+       WallPlugPlan6.sendCommand(ON)
+       }
+end
+
+    

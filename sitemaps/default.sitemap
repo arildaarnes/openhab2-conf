@@ -1,0 +1,221 @@
+sitemap default label="Lyngholen"  {
+
+Frame label="Dagens Dato" icon="calendar"{
+	
+        
+        Text item=DateToday
+   }
+   
+Frame label="1 etasje" icon="cellar" {
+	Text label="Soverom 1 (Catalina)" icon="bedroom_blue" {
+        
+	
+   	   Switch item=LightsSoverom1
+        
+        }
+
+      Text label="Soverom 2 (Mia)" icon="bedroom_orange" {
+        
+	    Switch item=LightsSoverom2
+	
+   	    Text item=Window1etgRom2
+   	    
+        
+       
+        
+        
+        }
+        Text label="Soverom 3 (Malene)" icon="bedroom_red" {
+        
+			Text label="Soverom"
+   	   
+        }
+        
+        Text label="Bad" icon="bath"
+         {
+        
+	
+   	    Text label="Bad"
+   	    
+        }
+        
+        Text label="Gang plan 1" icon="corridor" {
+        
+	
+   	    Text item=Door1Etg
+   	    
+   	    Text item=Door1Etg_Temperature valuecolor=[>22="green",>=20="blue",<18="red"]
+        }
+        
+        
+        Text label="Vaskerom" icon="washingmachine" {
+        
+		Text label="Vaskerom"
+   	    
+        }
+        Text label="Gang bi-inngang" icon="corridor" {
+        
+	 	
+   	    Switch item=LightsGangBiInngang
+   	    Slider item=LightsGangBiInngang
+   	    
+   	    
+        }
+        
+	Text label="Bod" icon="cellar" {
+        
+	
+   	    Text label="Bod"
+
+        }
+        
+        Text label="Teknisk rom" icon="settings" {
+        
+	 
+        
+        Switch item=network_pingdevice_192_168_10_186_online icon="network" label="Loftnas lagring"
+        Switch item=network_pingdevice_192_168_10_124_online icon="network" label="Neptun lagring"
+        
+      
+        
+        }
+        Text label="Bod ute" icon="garage" {
+        
+	    Text item=DoorBodUte
+	      	    
+   	   
+        
+        Text item=zwave_device_320c55b8_node10_sensor_temperature icon="temperature" label="Temperatur bod" valuecolor=[>20="green",>=10="blue",<10="red"]
+        
+        }
+	}
+
+Frame label="2 etasje" {
+	    Text label="Stuen" icon="sofa" {
+        	    
+          
+        Text item=TerasseDoorSpisestue
+          
+            
+        Text item=TerasseDoorSpisestue_Temperature valuecolor=[>22="green",>=20="blue",<18="red"]
+        
+                
+        /*Temperatur sensor røykvarsler */
+        Text item=SmokeDetectorStue_Temperature valuecolor=[>22="green",>=20="blue",<18="red"]
+        
+        
+        /*Smoke alarm stue */
+        Text label="Røykvarslere" icon="smoke"{
+        	
+        	Text item=SmokeDetectorStue_smoke 
+            Text item=SmokeDetectorStue_heat 
+            
+        }
+        
+        
+        
+       Text label="TV" icon="screen"{
+        
+        Switch item=samsungtv_tv_8740074f_82b4_4fcd_8c50_7aaa35713539_power icon="screen" label="TV"
+        Slider item=samsungtv_tv_8740074f_82b4_4fcd_8c50_7aaa35713539_volume icon="soundvolume" label="TV Volum"
+        Switch item=samsungtv_tv_8740074f_82b4_4fcd_8c50_7aaa35713539_sourceName label="TV Source" mappings=[TV=TV, HDMI1=HDMI1, HDMI2=HDMI2]
+         }
+        }
+
+	
+	
+	
+	Text label="Kjøkken" icon="kitchen" {
+        
+	
+   	    Switch item=WallPlugKitchen
+   	    
+   	    Text item=WallPlugKitchenKW
+   	    
+   	    
+        }
+        
+        Text label="Gang" icon="corridor" {
+        
+	   
+   	    
+   	    Switch item=LightsGangPlan4
+   	    Slider item=LightsGangPlan4
+   	    
+   	     	    
+   	    
+        }
+        
+        Text label="Garasje" icon="garage" {
+        
+
+   	    
+        Text label="Kamera" icon="camera" {
+        
+        
+        Webview url="http://192.168.10.127/cameras/camgarasje.html" height=300
+        Webview url="http://192.168.10.107/image.jpg"
+       }
+        
+        }
+        
+        Text label="Kamera" icon="camera" {
+        
+        Image url="http://www.aarnes.biz/wp-content/uploads/2014/02/AAA_5595-Edit.jpg"
+       }
+	}
+	
+	
+	Frame label="3 etasje" {
+		
+	Text label="TV Stue" icon="sofa"	{
+		
+		
+   	    
+   	      	    
+   	    Text item=MotionTVStue_Motion
+   	    
+   	    Text item=MotionTVStue_Temperature valuecolor=[>20="green",>=10="blue",<10="red"]
+   	    
+   	  
+   	    Text item=MotionTVStue_Lux
+   	    
+   	    
+   	    Switch item=XboxOne_TVStue
+   	    
+		
+	}
+	
+	Text label="Garderobe" icon="wardrobe"
+	{
+		Switch item=WallPlugPlan6
+		Text item=WallPlugPlan6KW
+		
+		Switch item=LightsGangToppen
+		Slider item=LightsGangToppen
+		
+	}
+	}
+
+	Frame label="Til stede" {
+		Text item=ArildPresence
+		Text item=CatalinaMobil
+		Text item=MiaMobil
+		Text item=ImeldaMobil
+		Text item=MaleneMobil
+		
+			
+		
+
+    	}
+    	
+    	Frame label="Chart" {
+    	Chart item=gTemperatures period=D refresh=30000
+    	
+    	Text item=TimeToBouvetint
+    	Text item=Alarm_Activated
+    	
+    	}
+    	}
+    	
+    	

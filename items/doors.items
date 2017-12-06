@@ -1,0 +1,32 @@
+
+/*1 Etasje */
+Number Door1Etg "Utgangsdør 1 Etg [MAP(no.map):%s]" <door> (gDoors) { channel="zwave:device:320c55b8:node15:sensor_door" }
+Number Door1Etg_Temperature "Plan1 Temperature: [%.1f °C]" <temperature> (gTemperatures) { channel="zwave:device:320c55b8:node15:sensor_temperature"}
+
+
+
+Number DoorBiinngang "BiInngang [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node77:sensor_binary" }
+
+Number DoorBodUte "Dør bod ute [MAP(no.map):%s]" <door> (gDoors){ channel="zwave:device:320c55b8:node10:sensor_door" }
+Number DoorBodUte_Temperature "Bod ute Temperature: [%.1f °C]" <temperature> (gTemperatures) { channel="zwave:device:320c55b8:node10:sensor_temperature"}
+
+
+/*2 etasje 
+*/
+
+Number TerasseDoorSpisestue "Terassedør spisestue [MAP(no.map):%s]" <door> (gDoors){ channel="zwave:device:320c55b8:node4:sensor_door" }
+
+Number TerasseDoorSpisestue_Temperature "Spisestue Temperature: [%.1f °C]" <temperature> (gTemperatures) { channel="zwave:device:320c55b8:node4:sensor_temperature"}
+
+
+Number DoorHovedInngang "HovedInngang [MAP(no.map):%s]" <frontdoor> { channel="zwave:device:3fea5b3e:node111:sensor_binary" }
+
+/*3 Etg */
+
+Number DoorTVStue "Terassedør TV-Stue [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node112:sensor_binary" }
+
+Number DoorGarderobe "Terassedør garderobe 6 plan [MAP(no.map):%s]" <door> { channel="zwave:device:3fea5b3e:node11:sensor_binary" }
+
+
+DateTime DateToday  "Date [%1$tA, %1$td.%1$tm.%1$tY %1$tH:%1$tM]" <clock> { channel="ntp:ntp:local:dateTime" }
+

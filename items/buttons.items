@@ -1,0 +1,3 @@
+
+Number KnappVindFang "Knapp vindfang" <wallswitch> { channel="zwave:device:320c55b8:node16:scene_number"}
+

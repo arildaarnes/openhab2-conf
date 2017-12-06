@@ -1,0 +1,49 @@
+var Timer set_timer = null
+
+rule "Alarm_Code_Entered"
+when
+	Item Entered_Code received update
+then
+if (Entered_Code.state.toString==Alarm_Code.state.toString)
+{     
+	if(Alarm_State.state==ON)
+	{
+		//Turn off Alarm instantly
+		Alarm_State.postUpdate(OFF)
+		sendNotification("arild@aarnes.org", "Alarm is OFF")
+		
+		//notify via Pushsafer
+		//pushsafer("pRnOj3rddehBzFtu3BvF", "Alarm Av", "Alarm", "6764", "", "1", "")
+		
+		
+		
+		
+	}
+	else if (Alarm_State.state==OFF)
+	{
+		if (set_timer != null)
+		{
+			set_timer.cancel()
+			set_timer = null
+		}
+		else
+		{
+			//Give user 15 seconds to get out and close door
+			set_timer = createTimer(now.plusSeconds(5)) [|
+				Alarm_State.postUpdate(ON)
+			set_timer = null
+			//notify via Pushsafer
+		//pushsafer("pRnOj3rddehBzFtu3BvF", "Alarm På", "Alarm", "6764", "", "1", "")
+		sendNotification("arild@aarnes.org", "Alarm is ON")
+		
+		
+		
+		
+		
+			]
+		}
+	}
+}
+
+
+end

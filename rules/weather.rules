@@ -1,0 +1,30 @@
+
+
+rule "Say weather"
+when
+	//Item MotionTVStue_Motion changed from 0 to 1
+	Time cron "0 20 7 ? * MON-FRI *"
+	//Time cron "0 04 19 1/1 * ? *"
+then
+
+val String msg1 = "God morgen. Nå er det  "  + Outside_Temperature.state.toString + " grader ute."
+val String msg2 = msg1 + ", Temperaturen i dag vil være fra ," + Temp_Min.state.toString + ", til maks ," + Temp_Max.state.toString + " ,grader.,"
+val String msg3 = msg2 + "Det tar i dag, " + TimeToBouvetint.state.toString() + ",minutter å kjøre til Forus, og "
+val String msg4 = msg3 + TimeToHoveint.state.toString() + ", å kjøre til Kreativ barnehage., , "
+val String msg = msg4 + "Været i dag er , " + Condition2.state.toString() + ",. ha en fin dag. "
+
+say(msg)
+
+
+
+if (Alarm_State.state==ON)
+{     
+	
+			//notify via Pushsafer
+		//pushsafer("pRnOj3rddehBzFtu3BvF", "Alarm Bevegelse detektert", "Alarm", "6764", "", "1", "")
+		sendNotification("arild@aarnes.org", "Bevegelse i TV-Stue")
+			
+		}
+
+
+end

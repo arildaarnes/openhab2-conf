@@ -1,0 +1,12 @@
+
+
+Switch WallPlugKitchen "Kaffetrakter" <poweroutlet> { channel="zwave:device:320c55b8:node7:switch_binary" }
+
+Number WallPlugKitchenKW "Kaffetrakter KW" <line> { channel="zwave:device:320c55b8:node7:meter_kwh"}
+
+
+Switch WallPlugPlan6 "LEDlist Garderobe" <poweroutlet> { channel="zwave:device:320c55b8:node13:switch_binary" }
+
+Number WallPlugPlan6KW "LEDlist Garderobe" <line> { channel="zwave:device:320c55b8:node13:meter_kwh"}
+
+

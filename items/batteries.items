@@ -1,0 +1,11 @@
+
+Number MotionTVStue_Battery "TV-Stue Motion Batteri" <battery> (gBattery) { channel="zwave:device:320c55b8:node11:battery-level"}
+
+Number Battery_DoorBodUte "Bod ute - Batteri" <battery> (gBattery) { channel="zwave:device:320c55b8:node10:battery-level"}
+Number Battery_SmokeDetectorStue "Smoke Detector stue - Batteri" <battery> (gBattery) { channel="zwave:device:320c55b8:node5:battery-level"}
+Number Battery_DoorSpiseStue "Door Spisestue - Batteri" <battery> (gBattery) { channel="zwave:device:320c55b8:node4:battery-level"}
+Number Battery_DoorPlan1 "Door plan1 - Batteri" <battery> (gBattery) { channel="zwave:device:320c55b8:node15:battery-level"}
+Number Battery_Buttonvindfang "Knapp Vindfang" <battery> (gBattery) { channel="zwave:device:320c55b8:node16:battery-level"}
+
+
+

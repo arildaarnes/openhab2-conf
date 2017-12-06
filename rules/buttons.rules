@@ -1,0 +1,67 @@
+var LightsGangToppenState = ""
+var LightsGangPlan4State = ""
+var LightsGangBiInngangState = ""
+
+/* Denne regel er for knappen i vindfanget som slår av alle lys når den trykkes en gang
+Når den trykkes to ganger går alle lys som var på på igjen */
+rule	"Fibaro Button Vindfang Pushing"
+when
+	Item KnappVindFang received update
+then
+	if (KnappVindFang.state == 1.0) {
+		logInfo("Knapp vindfang", "Knapp vindfang 1x pushed")
+		
+		//lagre status på lys
+		LightsGangToppenState = LightsGangToppen.state.toString
+		//skru av lys på toppen
+		LightsGangToppen.sendCommand(OFF)
+		logInfo("Lystoppen", LightsGangToppenState)
+		
+		//lagre status på lys
+		LightsGangPlan4State = LightsGangPlan4.state.toString
+		//skru av lys på gangen
+		LightsGangPlan4.sendCommand(OFF)
+		
+		//lagre status på lys
+		LightsGangBiInngangState = LightsGangBiInngang.state.toString
+		//Skru av lys ved Bi-inngang
+		LightsGangBiInngang.sendCommand(OFF)
+	}
+	// if (KnappVindFang.state == 1.1) {
+	// 	logInfo("FB01", "FB01 let go")
+	// 	FGS_Switch1.sendCommand(OFF)
+	// }
+	// if (KnappVindFang.state == 1.2) {
+	// 	logInfo("FB01", "FB01 kept in")
+	// 	FGS_Switch1.sendCommand(ON)
+	// }
+	if (KnappVindFang.state == 1.3) {
+		logInfo("Knapp vindfang", "Knapp vindfang 2x pushed")
+			//skru på lys på toppen
+		//LightsGangToppen.sendCommand(ON)
+		
+		//skru på lys på gangen
+		
+		LightsGangPlan4.sendCommand(ON)
+		//Skru på lys ved Bi-inngang
+		
+		LightsGangBiInngang.sendCommand(ON)
+	}
+	// if (KnappVindFang.state == 1.4) {
+	// 	logInfo("FB01", "FB01 3x pushed")
+	// 	FGS_Switch2.sendCommand(OFF)
+	// }
+	// if (KnappVindFang.state == 1.5) {
+	// 	logInfo("FB01", "FB01 4x pushed")
+	// 	FGS_Switch1.sendCommand(ON)
+	// 	FGS_Switch2.sendCommand(ON)
+	// }
+	// if (KnappVindFang.state == 1.6) {
+	// 	logInfo("FB01", "FB01 5x pushed")
+	// 	FGS_Switch1.sendCommand(OFF)
+	// 	FGS_Switch2.sendCommand(OFF)
+	// }
+end
+
+
+

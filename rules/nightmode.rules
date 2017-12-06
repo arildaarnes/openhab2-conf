@@ -1,0 +1,38 @@
+rule "Night Mode"
+when
+	Item Night_Mode received update 
+then
+	if(Night_Mode.state==ON)
+	{
+		//skru av lys på toppen
+		LightsGangToppen.sendCommand(OFF)
+		
+		//skru av lys på gangen
+		
+		LightsGangPlan4.sendCommand(OFF)
+		//Skru av lys ved Bi-inngang
+		
+		LightsGangBiInngang.sendCommand(OFF)
+		
+		//sjekk om dørene er åpne
+		
+		
+		//sendNotification("arild@aarnes.org", "Night mode on")
+		
+	}
+	else if (Night_Mode.state==OFF)
+	{
+		//skru på lys på toppen
+		LightsGangToppen.sendCommand(ON)
+		
+		//skru av lys på gangen
+		
+		LightsGangPlan4.sendCommand(ON)
+		//Skru av lys ved Bi-inngang
+		
+		LightsGangBiInngang.sendCommand(ON)
+		
+
+	}
+	//Alarm_State.postUpdate('ON')
+end

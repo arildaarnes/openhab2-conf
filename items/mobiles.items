@@ -1,0 +1,19 @@
+
+Switch ArildMobil "Arild Mobil [MAP(mobil.map):%s]" <man_3> { channel="network:device:192_168_10_182:online" }
+
+Switch CatalinaMobil "Catalina Mobil [MAP(mobil.map):%s]" <girl_4> { channel="network:device:192_168_10_141:online" }
+
+Switch MiaMobil "Mia Mobil [MAP(mobil.map):%s]" <girl_3> { channel="network:device:192_168_10_140:online" }
+
+Switch ImeldaMobil "Imelda Mobil [MAP(mobil.map):%s]" <woman_5> { channel="network:device:192_168_10_170:online" }
+
+Switch MaleneMobil "Malene Mobil [MAP(mobil.map):%s]" <girl_3> { channel="network:pingdevice:192_168_10_181:online" }
+
+Switch ArildPresence "Arild [MAP(mobil.map):%s]" <Man_3>
+
+
+
+
+
+
+

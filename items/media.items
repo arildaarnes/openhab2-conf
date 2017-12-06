@@ -1,0 +1,5 @@
+
+Switch XboxOne_TVStue "XboxOne TV stue" <projector> { channel="network:pingdevice:192_168_10_159:online" }
+
+
+

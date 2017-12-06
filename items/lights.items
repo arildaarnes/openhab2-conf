@@ -1,0 +1,21 @@
+
+
+Switch LightsSoverom2 "Lys [MAP(lights.map):%s]" <light> { channel="zwave:device:3fea5b37:node28:sensor_binary" }
+
+Switch LightsSoverom1 "Lys [MAP(lights.map):%s]" <light> { channel="zwave:device:3fea5b37:node29:sensor_binary" }
+
+Dimmer LightsGangPlan4 "Lys gang" <dimmablelight> { channel="zwave:device:320c55b8:node9:switch_dimmer" }
+
+Dimmer LightsGangBiInngang "Lys gang Bi-Inngang" <dimmablelight> { channel="zwave:device:320c55b8:node12:switch_dimmer"}
+
+Dimmer LightsGangToppen "Lys gang toppen" <dimmablelight> { channel="zwave:device:320c55b8:node14:switch_dimmer"}
+
+Switch Night_Mode "Night mode"
+
+Switch LysTest "Lys Test"
+
+
+
+
+
+
