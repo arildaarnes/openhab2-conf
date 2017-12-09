@@ -1,0 +1,5 @@
+// Xiaomi Temperature and Humidity Sensor i Bod-Teknisk rom
+Number HT_Temperature <temperature> { channel="mihome:sensor_ht:158d0001b8f4ac:temperature" }
+Number HT_Humidity <humidity> { channel="mihome:sensor_ht:158d0001b8f4ac:humidity" }
+Number HT_Battery <battery> { channel="mihome:sensor_ht:158d0001b8f4ac:batteryLevel" }
+Switch HT_BatteryLow <energy> { channel="mihome:sensor_ht:158d0001b8f4ac:lowBattery" }
