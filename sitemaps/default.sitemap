@@ -64,9 +64,9 @@ Frame label="1 etasje" icon="cellar" {
         
 	Text label="Bod" icon="cellar" {
         
+		Text item=Teknisk_rom_Temperature valuecolor=[>22="green",>=20="blue",<18="red"]
+		Text item=Teknisk_rom_Humidity
 	
-   	    Text label="Bod"
-
         }
         
         Text label="Teknisk rom" icon="settings" {
@@ -170,10 +170,7 @@ Frame label="2 etasje" {
 		
 	Text label="TV Stue" icon="sofa"	{
 		
-		
-   	    
-   	      	    
-   	    Text item=MotionTVStue_Motion
+		Text item=MotionTVStue_Motion
    	    
    	    Text item=MotionTVStue_Temperature valuecolor=[>20="green",>=10="blue",<10="red"]
    	    
@@ -185,6 +182,13 @@ Frame label="2 etasje" {
    	    
 		
 	}
+
+	Text label="Kontor" icon="office" {
+
+		Text item=Kontor_Temperature valuecolor=[>22="green",>=20="blue",<18="red"]
+		Text item=Kontor_Humidity
+
+	}
 	
 	Text label="Garderobe" icon="wardrobe"
 	{
@@ -195,6 +199,11 @@ Frame label="2 etasje" {
 		Slider item=LightsGangToppen
 		
 	}
+
+	Text label="Soverom oppe" icon="bedroom" {
+        
+			Switch item=WallPlugSoveromPlan6
+        }
 	}
 
 	Frame label="Til stede" {

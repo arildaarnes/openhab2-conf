@@ -1,5 +1,12 @@
 // Xiaomi Temperature and Humidity Sensor i Bod-Teknisk rom
-Number HT_Temperature <temperature> { channel="mihome:sensor_ht:158d0001b8f4ac:temperature" }
-Number HT_Humidity <humidity> { channel="mihome:sensor_ht:158d0001b8f4ac:humidity" }
-Number HT_Battery <battery> { channel="mihome:sensor_ht:158d0001b8f4ac:batteryLevel" }
-Switch HT_BatteryLow <energy> { channel="mihome:sensor_ht:158d0001b8f4ac:lowBattery" }
+Number Teknisk_rom_Temperature "Temperatur bod: [%.1f °C]" <temperature> (gTemperatures) { channel="mihome:sensor_ht:158d0001b8f4ac:temperature" }
+Number Teknisk_rom_Humidity "Luftfuktighet bod" <humidity> { channel="mihome:sensor_ht:158d0001b8f4ac:humidity" }
+Number Teknisk_rom_Battery <battery> (gBattery) { channel="mihome:sensor_ht:158d0001b8f4ac:batteryLevel" }
+Switch Teknisk_rom_BatteryLow <energy> { channel="mihome:sensor_ht:158d0001b8f4ac:lowBattery" }
+
+// Xiaomi Temperature and Humidity Sensor i kontor
+Number Kontor_Temperature "Temperatur kontor: [%.1f °C]" <temperature> (gTemperatures) { channel="mihome:sensor_ht:158d0001b911dd:temperature" }
+Number Kontor_Humidity "Luftfuktighet kontor" <humidity> { channel="mihome:sensor_ht:158d0001b911dd:humidity" }
+Number Kontor_Battery <battery> (gBattery) { channel="mihome:sensor_ht:158d0001b911dd:batteryLevel" }
+Switch Kontor_BatteryLow <energy> { channel="mihome:sensor_ht:158d0001b911dd:lowBattery" }
+

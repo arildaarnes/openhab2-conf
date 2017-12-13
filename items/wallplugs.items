@@ -10,3 +10,7 @@ Switch WallPlugPlan6 "LEDlist Garderobe" <poweroutlet> { channel="zwave:device:3
 Number WallPlugPlan6KW "LEDlist Garderobe" <line> { channel="zwave:device:320c55b8:node13:meter_kwh"}
 
 
+Switch WallPlugSoveromPlan6 "Ovn soverom" <poweroutlet> { channel="zwave:device:320c55b8:node17:switch_binary" }
+
+
+
