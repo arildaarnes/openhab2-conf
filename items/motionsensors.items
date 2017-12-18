@@ -1,9 +1,9 @@
 
-Number MotionTVStue_Motion "TV-Stue - Bevegelse [MAP(motion.map):%s]" <motion> { channel="zwave:device:320c55b8:node11:alarm_motion"}
+Number MotionGarderobe_Motion "Garderobe - Bevegelse [MAP(motion.map):%s]" <motion> { channel="zwave:device:320c55b8:node11:alarm_motion"}
 
-Number MotionTVStue_Temperature "TV-Stue Temperature: [%.1f °C]" <temperature> (gTemperatures) { channel="zwave:device:320c55b8:node11:sensor_temperature"}
+Number MotionGarderobe_Temperature "Garderobe Temperature: [%.1f °C]" <temperature> (gTemperatures) { channel="zwave:device:320c55b8:node11:sensor_temperature"}
 
-Number MotionTVStue_Lux "TV-Stue Lux" <energy>  { channel="zwave:device:320c55b8:node11:sensor_luminance" }
+Number MotionGarderobe_Lux "Garderobe Lux" <energy>  { channel="zwave:device:320c55b8:node11:sensor_luminance" }
 
 
 

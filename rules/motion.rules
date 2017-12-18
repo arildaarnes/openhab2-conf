@@ -2,10 +2,29 @@
 
 rule "Motion Detectors"
 when
-	Item MotionTVStue_Motion changed from 0 to 1
+	Item MotionGarderobe_Motion changed from 0 to 1
 then
 
+	LightsGangToppen.sendCommand(ON)
 
+if (Alarm_State.state==ON)
+{     
+	
+			//notify via Pushsafer
+		//pushsafer("pRnOj3rddehBzFtu3BvF", "Alarm Bevegelse detektert", "Alarm", "6764", "", "1", "")
+		sendNotification("arild@aarnes.org", "Bevegelse i TV-Stue")
+			
+		}
+
+
+end
+
+rule "Motion Detectors off"
+when
+	Item MotionGarderobe_Motion changed from 1 to 0
+then
+
+	LightsGangToppen.sendCommand(OFF)
 
 if (Alarm_State.state==ON)
 {     

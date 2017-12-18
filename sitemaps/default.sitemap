@@ -169,15 +169,10 @@ Frame label="2 etasje" {
 	Frame label="3 etasje" {
 		
 	Text label="TV Stue" icon="sofa"	{
-		
-		Text item=MotionTVStue_Motion
-   	    
-   	    Text item=MotionTVStue_Temperature valuecolor=[>20="green",>=10="blue",<10="red"]
-   	    
-   	  
-   	    Text item=MotionTVStue_Lux
-   	    
-   	    
+
+		Switch item=LightsTvstue
+		Slider item=LightsTvstue
+
    	    Switch item=XboxOne_TVStue
    	    
 		
@@ -197,6 +192,13 @@ Frame label="2 etasje" {
 		
 		Switch item=LightsGangToppen
 		Slider item=LightsGangToppen
+
+		Text item=MotionGarderobe_Motion
+   	    
+   	    Text item=MotionGarderobe_Temperature valuecolor=[>20="green",>=10="blue",<10="red"]
+   	    
+   	  
+   	    Text item=MotionGarderobe_Lux
 		
 	}
 
