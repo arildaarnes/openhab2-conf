@@ -1,6 +1,7 @@
 var LightsGangToppenState = ""
 var LightsGangPlan4State = ""
 var LightsGangBiInngangState = ""
+var LightsTvstueState = ""
 
 /* Denne regel er for knappen i vindfanget som slår av alle lys når den trykkes en gang
 Når den trykkes to ganger går alle lys som var på på igjen */
@@ -26,6 +27,13 @@ then
 		LightsGangBiInngangState = LightsGangBiInngang.state.toString
 		//Skru av lys ved Bi-inngang
 		LightsGangBiInngang.sendCommand(OFF)
+
+		//lagre status på lys
+		LightsTvstueState = LightsTvstue.state.toString
+		//Skru av lys ved Bi-inngang
+		LightsTvstue.sendCommand(OFF)
+
+		
 	}
 	// if (KnappVindFang.state == 1.1) {
 	// 	logInfo("FB01", "FB01 let go")

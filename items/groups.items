@@ -1,5 +1,7 @@
 Group gTemperatures 
 Group gDoors
 Group gBattery
+Group gSmokeDetectors
+Group gWallplugs
 
 

@@ -13,6 +13,9 @@ then
 		//Skru av lys ved Bi-inngang
 		
 		LightsGangBiInngang.sendCommand(OFF)
+
+		//Skru av lys TV-Stue
+		LightsTvstue.sendCommand(OFF)
 		
 		//sjekk om dørene er åpne
 		

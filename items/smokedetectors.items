@@ -1,6 +1,6 @@
 
 
-Switch SmokeDetectorStue_smoke "Røykvarsler stue - røyk [MAP(smoke.map):%s]" <smoke> { channel="zwave:device:320c55b8:node5:alarm_smoke"}
+Switch SmokeDetectorStue_smoke "Røykvarsler stue - røyk [MAP(smoke.map):%s]" <smoke> (gSmokeDetectors) { channel="zwave:device:320c55b8:node5:alarm_smoke"}
 
 Switch SmokeDetectorStue_heat "Røykvarsler stue - Varme [MAP(smoke.map):%s]" <fire> { channel="zwave:device:320c55b8:node5:alarm_heat"}
 

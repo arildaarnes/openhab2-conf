@@ -131,7 +131,13 @@ Frame label="2 etasje" {
    	    Switch item=WallPlugKitchen
    	    
    	    Text item=WallPlugKitchenKW
-   	    
+
+		Default item=sonos_PLAY1_RINCON_949F3E0E5FF001400_control
+   	    Slider  item=sonos_PLAY1_RINCON_949F3E0E5FF001400_volume
+			Switch  item=sonos_PLAY1_RINCON_949F3E0E5FF001400_mute
+			Switch  item=sonos_PLAY1_RINCON_949F3E0E5FF001400_led
+			Text    item=sonos_PLAY1_RINCON_949F3E0E5FF001400_currenttrack
+			Text    item=sonos_PLAY1_RINCON_949F3E0E5FF001400_state
    	    
         }
         
@@ -223,8 +229,9 @@ Frame label="2 etasje" {
     	Frame label="Chart" {
     	Chart item=gTemperatures period=D refresh=30000
     	
-    	Text item=TimeToBouvetint
+    	Text item=TimeToBouvetint  label="Tid til Bouvet [%s]"
     	Text item=Alarm_Activated
+		Text item=TimeOfDay label="Timeofday: [%s]"
     	
     	}
     	}

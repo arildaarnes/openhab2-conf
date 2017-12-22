@@ -1,0 +1,32 @@
+
+// System started to calculate the current time period in case the time period changed when OH was down
+rule "Get time period for right now" 
+when
+	System started or
+	Time cron "0 0 6,17 * * ? *" or           // Morning start, Night start
+	Item Sunrise_Event received update ON or  // Day start
+    Item Twilight_Event received update ON or // Twilight start
+	Item Sunset_Event received update ON      // Evening start
+then
+    Thread::sleep(50) // lets make sure we are just a little past the time transition
+
+    val morning = new DateTime(now.withTimeAtStartOfDay.plusHours(6).millis)
+	val sunrise = new DateTime((Sunrise_Time.state as DateTimeType).calendar.timeInMillis)
+	val twilight = new DateTime((Twilight_Time.state as DateTimeType).calendar.timeInMillis)
+	val evening = new DateTime((Sunset_Time.state as DateTimeType).calendar.timeInMillis)
+	val night = new DateTime(now.withTimeAtStartOfDay.plusHours(23).millis)
+
+    var currPeriod = "ERROR"
+    if     (now.isAfter(morning)  && now.isBefore(sunrise))  currPeriod = "Morning"
+    else if(now.isAfter(sunrise)  && now.isBefore(twilight)) currPeriod = "Day"
+    else if(now.isAfter(twilight) && now.isBefore(evening))  currPeriod = "Twilight"
+    else if(now.isAfter(evening)  && now.isBefore(night))    currPeriod = "Evening"
+    else if(now.isAfter(night))                              currPeriod = "Night"
+
+    if(TimeOfDay.state.toString != currPeriod) {
+    	logInfo("logNameWeather", "Updating Time of Day {}, Previous Time of Day {}", currPeriod, TimeOfDay.state.toString)
+    	PreviousTimeOfDay.sendCommand(TimeOfDay.state.toString)
+    	TimeOfDay.sendCommand(currPeriod)
+    }
+        
+end

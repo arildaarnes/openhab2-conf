@@ -1,0 +1,18 @@
+String TimeOfDay "Current Time of Day [%s]"
+String PreviousTimeOfDay "Previous Time of Day [%s]"
+Switch          Evening_Event                              (Weather) { astro="planet=sun, type=set, property=start, offset=-90" }
+Switch          Sunrise_Event                               (Weather) { astro="planet=sun, type=rise, property=start" }
+Switch          Twilight_Event                               (Weather) { astro="planet=sun, type=civilDusk, property=start" }
+
+DateTime Sunrise_Time "Sunrise [%1$tH:%1$tM]"
+    { channel="astro:sun:local:rise#start" }
+
+DateTime Sunset_Time "Sunset [%1$tH:%1$tM]"
+    { channel="astro:sun:local:set#start" }
+
+    DateTime Twilight_Time "Twilight [%1$tH:%1$tM]"
+    { channel="astro:sun:local:civilDusk#start" }
+
+// TODO figure out how to do this with offsets instead of a new Thing
+//DateTime Evening_Time "Evening [%1$tH:%1$tM]"
+ //   { channel="astro:sun:minus90:set#start" }

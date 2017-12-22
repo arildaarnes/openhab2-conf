@@ -1,0 +1,13 @@
+
+rule "Smokedetectors"
+when
+	Item gSmokeDetectors changed
+then
+	
+		sendNotification("arild@aarnes.org", "Alarm! Røykvarsler!!!! Røyk detektert")
+		
+
+	
+end
+
+
