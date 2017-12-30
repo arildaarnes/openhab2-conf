@@ -5,6 +5,15 @@ Number MotionGarderobe_Temperature "Garderobe Temperature: [%.1f °C]" <temperat
 
 Number MotionGarderobe_Lux "Garderobe Lux" <energy>  { channel="zwave:device:320c55b8:node11:sensor_luminance" }
 
+//Motion Sensor garderobe - rett over dør
+
+Number MotionGarderobe2_Motion "Garderobe 2 - Bevegelse [MAP(motion.map):%s]" <motion> { channel="zwave:device:320c55b8:node21:alarm_motion"}
+
+Number MotionGarderobe2_Temperature "Garderobe 2 Temperature: [%.1f °C]" <temperature> (gTemperatures) { channel="zwave:device:320c55b8:node21:sensor_temperature"}
+
+Number MotionGarderobe2_Lux "Garderobe 2 Lux" <energy>  { channel="zwave:device:320c55b8:node21:sensor_luminance" }
+
+
 
 
 

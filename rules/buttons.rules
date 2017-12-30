@@ -33,6 +33,9 @@ then
 		//Skru av lys ved Bi-inngang
 		LightsTvstue.sendCommand(OFF)
 
+		//Skru av lys over spisebord
+		WallPlugSpisestue.sendCommand(OFF)
+
 		
 	}
 	// if (KnappVindFang.state == 1.1) {
@@ -55,15 +58,21 @@ then
 		
 		LightsGangBiInngang.sendCommand(ON)
 	}
-	// if (KnappVindFang.state == 1.4) {
+	if (KnappVindFang.state == 1.4) {
 	// 	logInfo("FB01", "FB01 3x pushed")
 	// 	FGS_Switch2.sendCommand(OFF)
-	// }
-	// if (KnappVindFang.state == 1.5) {
+	GarasjeDoor.sendCommand(ON)
+	
+	logInfo("Garasje", "Åpnet med knapp")
+	}
+	if (KnappVindFang.state == 1.5) {
 	// 	logInfo("FB01", "FB01 4x pushed")
 	// 	FGS_Switch1.sendCommand(ON)
 	// 	FGS_Switch2.sendCommand(ON)
-	// }
+	GarasjeDoor.sendCommand(OFF)
+	
+	logInfo("Garasje", "Lukket med knapp")
+	 }
 	// if (KnappVindFang.state == 1.6) {
 	// 	logInfo("FB01", "FB01 5x pushed")
 	// 	FGS_Switch1.sendCommand(OFF)

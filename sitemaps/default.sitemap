@@ -103,6 +103,7 @@ Frame label="2 etasje" {
         /*Temperatur sensor røykvarsler */
         Text item=SmokeDetectorStue_Temperature valuecolor=[>22="green",>=20="blue",<18="red"]
         
+		Switch item=WallPlugSpisestue
         
         /*Smoke alarm stue */
         Text label="Røykvarslere" icon="smoke"{
@@ -161,7 +162,14 @@ Frame label="2 etasje" {
         
         Webview url="http://192.168.10.127/cameras/camgarasje.html" height=300
         Webview url="http://192.168.10.107/image.jpg"
+
+		
+		
        }
+	   
+	   Switch item=GarasjeDoor
+	   Text item=GarasjeStatus
+	   
         
         }
         

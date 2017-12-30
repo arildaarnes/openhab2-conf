@@ -1,0 +1,15 @@
+
+
+//When the garage door is opend, send me a notification
+rule "Garasje varsling"
+when
+	Item GarasjeDoor received command ON
+then
+	
+		
+			sendNotification("arild@aarnes.org", "Garasje port åpnet")
+end
+
+
+
+    

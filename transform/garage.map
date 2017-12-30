@@ -1,0 +1,9 @@
+CLOSED=closed
+OPEN=open
+NULL=unknown
+ON=Lukket
+OFF=\u00C5pen
+0=Lukket
+1=\u00C5pen
+-=ukjent
+ 

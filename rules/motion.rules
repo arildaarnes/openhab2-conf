@@ -2,7 +2,9 @@
 
 rule "Motion Detectors"
 when
-	Item MotionGarderobe_Motion changed from 0 to 1
+	Item MotionGarderobe_Motion changed from 0 to 1 or
+	Item MotionGarderobe2_Motion changed from 0 to 1
+	
 then
 
 	LightsGangToppen.sendCommand(ON)

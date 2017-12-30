@@ -12,5 +12,8 @@ Number WallPlugPlan6KW "LEDlist Garderobe" <line> { channel="zwave:device:320c55
 
 Switch WallPlugSoveromPlan6 "Ovn soverom" <poweroutlet> { channel="zwave:device:320c55b8:node17:switch_binary" }
 
+Switch WallPlugSpisestue "Taklampe Spisestue" <light> (gWallplugs) { channel="zwave:device:320c55b8:node22:switch_binary" }
+
+Number WallPlugSpisestueKW "Taklampe Spisestue KW" <line> { channel="zwave:device:320c55b8:node22:meter_kwh"}
 
 

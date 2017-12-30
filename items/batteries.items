@@ -1,5 +1,6 @@
 
 Number MotionTVStue_Battery "TV-Stue Motion Batteri" <battery> (gBattery) { channel="zwave:device:320c55b8:node11:battery-level"}
+Number MotionGarderobe2_Battery "Garderobe 2 Motion Batteri" <battery> (gBattery) { channel="zwave:device:320c55b8:node20:battery-level"}
 
 Number Battery_DoorBodUte "Bod ute - Batteri" <battery> (gBattery) { channel="zwave:device:320c55b8:node10:battery-level"}
 Number Battery_SmokeDetectorStue "Smoke Detector stue - Batteri" <battery> (gBattery) { channel="zwave:device:320c55b8:node5:battery-level"}

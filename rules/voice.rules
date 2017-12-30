@@ -1,0 +1,105 @@
+import org.eclipse.smarthome.core.types.*
+import org.eclipse.smarthome.core.library.types.*
+import org.eclipse.smarthome.core.persistence.* 
+
+import org.eclipse.smarthome.core.items.GenericItem 
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+
+rule "push debug switch"
+when
+    Item DebugSwitch changed from OFF to ON
+then
+    sendCommand(VoiceCommand,"open garage")
+    //sendCommand(VoiceCommand,"Play radio in living")
+end
+
+
+// Voice rule
+rule "Voice activated" 
+when 
+    Item VoiceCommand received command 
+then 
+    var String command = VoiceCommand.state.toString.toLowerCase
+    logInfo("Voice.Rec","VoiceCommand received "+command)
+    
+    var State newState = null
+    // Status herausfinden, ansonsten togglen
+    if (command.contains("degrees") || command.contains("percent") || command.contains("dim")) {
+        // Wert setzten=> neuer Status als Zahl extrahieren
+        var Pattern p = Pattern::compile(".* ([0-9]+) (degrees|percent).*")
+        var Matcher m = p.matcher(command)
+        if (m.matches()) {
+            logInfo("Voice.Rec","found number is "+m.group(1))
+            newState = new StringType(m.group(1).trim())
+        } else {
+            logInfo("Voice.Rec","command does not match")
+        }
+    } 
+    // else if (command.contains("off") || command.contains("stop") || command.contains("pause")) {
+    //     newState = OFF
+    // } else if (command.contains("on") || command.contains("start") || command.contains("play")) {
+    //     newState = ON
+    // }
+     else if (command.contains("down") || command.contains("close")) {
+        newState = OFF
+    } 
+    else if (command.contains("up") || command.contains("open")) {
+        newState = ON
+    } //else if (command.contains("increase")) {
+//        newState = INCREASE
+//    } else if (command.contains("decrease")) {
+//        newState = DECREASE
+//    }
+
+logInfo("Voice.Rec","VoiceCommand received "+newState)
+// Finn hvilket rom som blir sagt
+    var String room = null
+    var String roomItemPart = null
+    var String roomArticle="in the"
+    if (command.contains("living")) {
+        room = "Living"
+        roomItemPart = "_GF_Living"
+    } else if (command.contains("bedroom")) {
+        room = "Bedroom"
+        roomItemPart = "_FF_Bedroom"
+    } else if (command.contains("bathroom") || command.contains("bath")) {
+        room = "Bathroom"
+        roomItemPart = "_FF_Bathroom"
+    } else if (command.contains("upstairs")) {
+        room = "upstairs"
+        roomItemPart = "_SF_upstairs"
+        roomArticle = "at the"
+    } else if (command.contains("kitchen")) {
+        room = "Kitchen"
+        roomItemPart = "_FF_Kitchen"
+    } 
+    else if (command.contains("garage")) {
+        room = "Garage"
+        roomItemPart = "_FF_Garage"
+
+//sjekk om vi har rett garasje kommando
+
+        // GarasjeDoor.sendCommand(newState)  
+        if(newState==ON)
+          {
+              //åpne garasjen
+              GarasjeDoor.sendCommand(ON)
+
+          }
+          else if (newState==OFF)
+
+          {
+              //lukk garasjen
+               GarasjeDoor.sendCommand(OFF)
+
+          }
+        logInfo("Voice.Rec","Garage - "+newState)
+
+    } 
+
+
+
+end
+
+

@@ -25,18 +25,18 @@ then
 	
 end
 
-//Kjører når bryter på veggen brukes
-rule "LightsToppen Switch is used"
-when
-	Item LightsGangToppen changed
-then
-	if (LightsGangToppen.state == 0) {
-       WallPlugPlan6.sendCommand(OFF)
-       }
-    else
-    {
-       WallPlugPlan6.sendCommand(ON)
-       }
-end
+// //Kjører når bryter på veggen brukes
+// rule "LightsToppen Switch is used"
+// when
+// 	Item LightsGangToppen changed
+// then
+// 	if (LightsGangToppen.state == 0) {
+//        WallPlugPlan6.sendCommand(OFF)
+//        }
+//     else
+//     {
+//        WallPlugPlan6.sendCommand(ON)
+//        }
+// end
 
     
